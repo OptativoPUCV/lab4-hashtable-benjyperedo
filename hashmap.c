@@ -53,9 +53,9 @@ void enlarge(HashMap * map) {
   enlarge_called = 1; //no borrar (testing purposes)
   if(map==NULL) return;
   Pair ** aux = map->buckets;
-  map->buckets = (Pair **)calloc((map->capacity * 2),sizeof(Pair*));
   long oldCapacity = map->capacity;
   map->capacity *= 2;
+  map->buckets = (Pair **)calloc(map->capacity,sizeof(Pair*));
   map->size = 0;
 
   for(long i = 0 ; i < oldCapacity ; i++){
