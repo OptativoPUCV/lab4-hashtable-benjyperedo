@@ -90,8 +90,14 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-
-    return NULL;
+  long pos = 0;
+  while(map->buckets[pos]!=NULL && map->buckets[pos]->key!=NULL){
+    if(map->buckets[pos]->key!=NULL){
+      return map->buckets[pos];
+    }
+    pos++;
+  }
+  return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
