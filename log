@@ -52,3 +52,14 @@ Tue 23 Apr 2024 12:47:32 PM UTC:
  tests:  12|2
 total_score: 50/70
 9b1dfdc
+Tue 23 Apr 2024 12:48:45 PM UTC: 
+ hashmap.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:106:8: error: unused variable ‘pos’ [-Werror=unused-variable]
+  106 |   long pos = map->current+1;
+      |        ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+0da7c1b

@@ -95,12 +95,14 @@ Pair * firstMap(HashMap * map) {
     if(map->buckets[pos]->key!=NULL){
       return map->buckets[pos];
     }
+    map->current = pos;
     pos++;
   }
   return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
-
-    return NULL;
+  if(map==NULL) return NULL;
+  long pos = map->current+1;
+  return NULL;
 }
