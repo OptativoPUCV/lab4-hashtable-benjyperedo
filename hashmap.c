@@ -74,11 +74,11 @@ Pair * searchMap(HashMap * map,  char * key) {
   long pos = hash(key,map->capacity);
   while(map->buckets[pos]!=NULL && map->buckets[pos]->key!=NULL){
     if(strcmp(map->buckets[pos]->key,key)==0){
+      map->current = pos;
       return map->buckets[pos];
     }
-    pos = (pos+1)%map->capacity; 
+    pos = (pos+1)%map->capacity;
   }
-  map->current = pos;
   return NULL;
 }
 
