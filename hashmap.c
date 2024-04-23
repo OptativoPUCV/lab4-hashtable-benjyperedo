@@ -65,9 +65,15 @@ HashMap * createMap(long capacity) {
     return map;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
-
-
+void eraseMap(HashMap * map,  char * key) {
+  if(map==NULL || key==NULL) return;
+  long pos = hash(key,map->capacity);
+  while(map->buckets[pos]!=NULL && map->buckets[pos]->key!=NULL){
+    if(strcmp(map->buckets[pos]->key,key)==0){
+      map->buckets[pos]->key=NULL;
+    }
+    pos = (pos+1)%map->capacity;
+  }
 }
 
 Pair * searchMap(HashMap * map,  char * key) {
