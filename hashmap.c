@@ -91,10 +91,10 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
   long pos = 0;
-  if (map->buckets[pos]==NULL){
-    pos++;
-  }
   while(map->buckets[pos]!=NULL && map->buckets[pos]->key!=NULL){
+    if (map->buckets[pos]==NULL){
+      pos++;
+    }
     map->current = pos;
     return map->buckets[pos];
   }
